@@ -18,9 +18,18 @@ const userName = "Gediminas";
 
 const goodBye = "Viso gero " + userName + ", lauksime sugrįštant!";
 
-console.log(goodBye);
+// console.log(goodBye);
 
-console.log(10 == 9);
-console.log(10 != 10);
-console.log("10" === 10);
-console.log(10 !== 9);
+// console.log(10 == 9);
+// console.log(10 != 10);
+// console.log("10" === 10);
+// console.log(10 !== 9);
+
+const a = 10;
+const b = 34;
+
+if (a >= b) {
+  console.log("a yra daugiau uz b");
+} else {
+  console.log("a yra maziau uz b");
+}
