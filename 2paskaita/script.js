@@ -81,7 +81,7 @@
 const legalAge = 18;
 const clientAge = 10;
 
-if (clientAge < legalAge) {
+if (clientAge >= legalAge) {
   console.log("Jūs nepilnametis");
 }
 
@@ -97,7 +97,7 @@ if (myName.length > 6) {
 //
 
 // 3 užduotis
-
+// || jie reiskiasi arba &&  (ir)
 const myAge = 12321;
 
 if (myAge > 100) {
