@@ -1,36 +1,35 @@
-const Time = (e) => e * 60 + "seconds";
+const minutesToHours = (minutes) => minutes / 60 + " hour";
+console.log(minutesToHours(45));
 
-const days = (a) => a * 365;
+const yearToDecade = (year) => year / 10 + " amžius";
+console.log(yearToDecade(30));
 
-function numberDouble(number) {
-  const double = number * number;
-  return double;
-}
-console.log(numberDouble(5));
+const numberCube = (number) => number * number * number;
+console.log(numberCube(3));
 
-// Parašykite arrow funkciją (viena eilutę), kuri paėmus du skaičius (aukštį ir plotį) grąžintų trikampio plotą ((aukštis * plotis) / 2)
-// Pvz: fn(10, 10) -> 50
+const squareArea = (number1, number2) => number1 * number2;
+console.log(squareArea(5, 5));
 
-const TriangleArea = (number1, number2) => (number1 * number2) / 2;
+const firstNameUpperLetter = (nameUpper) => {
+  const a = nameUpper.split("");
+  const b = a[0];
+  const c = b.toUpperCase();
+  return c;
+};
+console.log(firstNameUpperLetter("dad"));
 
-console.log(TriangleArea(13, 23));
+const firstLetterRemove = (word) => {
+  const slicedWord = word.slice(1);
+  const splitedName = slicedWord.split("");
+  const a = splitedName[0];
+  const c = a.toUpperCase();
+  const NameWithNoFirstLetter = c + word.slice(2);
 
-// Parašykite funkciją, kuri paims parametrą String, ir grąžins to parametro paskutinę raidę.
-// pvz. Paduodu: "Petras", grąžina "s".
+  return NameWithNoFirstLetter;
+};
+console.log(firstLetterRemove("Tomas"));
 
-const lastChar = (name) => name.slice(-1); // const fn = (text) => text.charAt(text.length - 1);
-console.log(lastChar("Gedimina"));
-
-// Sukurkite funkciją, kuri paims stringą ir grąžins jį apverstą mažosiomis.
-// T.y. "Petras" -> "sartep"
-
-const nameBackwards = (name1) => name1.split("").reverse().join("");
-console.log(nameBackwards("Gediminas"));
-
-const biggestNegativeNumber = (array) => array.sort((a, b) => a - b, 0)[0];
-const arr = [123, 23, 4, -123, -1223];
-console.log(biggestNegativeNumber(arr));
-
+// MASYVAI
 const data = [
   {
     id: 1,
@@ -434,33 +433,46 @@ const data = [
   },
 ];
 
-const femaleCount = (array) => {
-  const persons = array.filter((person) => person.gender === "Female");
-  return persons.length;
+const FiltredNamesA = (array) => {
+  const names = array.filter(
+    (name1) =>
+      name1.first_name.charAt(0) === "a" || name1.first_name.charAt(0) === "A"
+  );
+  const number = names.length + " names starting with letter A.";
+  return number;
 };
+console.log(FiltredNamesA(data));
 
-console.log(femaleCount(data));
+const FiltredNamesK = (array) => {
+  const names = array.filter(
+    (name1) =>
+      name1.first_name.charAt(0) === "K" || name1.first_name.charAt(0) === "k"
+  );
+  const number = names.length + " names starting with letter K.";
+  return number;
+};
+console.log(FiltredNamesK(data));
 
-const newCar = (array) => {
-  const newCar = array.filter((person) => person.car_year > 2000);
+const newCarArray = (array) => {
+  const newCar = array.filter((person) => person.car_year >= 2000);
   return newCar.map((person) => person.id);
 };
-console.log(newCar(data));
+console.log(newCarArray(data));
 
-const smallPeople = (array) => {
-  const small = array.filter(
-    (people) => people.shirt_size === "XS" || people.shirt_size === "S"
+const mediumPeople = (array) => {
+  const medium = array.filter(
+    (people) => people.shirt_size === "M" || people.shirt_size === "L"
   );
-
-  return small.sort((a, b) => (b.first_name > a.first_name ? -1 : 1));
+  return medium.sort((a, b) => (b.first_name > a.first_name ? 1 : -1));
 };
-console.log(smallPeople(data));
+console.log(mediumPeople(data));
 
-const smallPeopleArray = smallPeople(data);
-const uniqueArray = (array) =>
-  array.map((person) => ({
+const newCarArrayA = (array) => {
+  const newCar = array.filter((person) => person.car_year >= 2000);
+  return newCar.map((person) => ({
     id: person.id,
-    first_name: person.first_name,
-    shirt_size: person.shirt_size,
+    gender: person.gender,
+    car_model: person.car_model,
   }));
-console.log(uniqueArray(smallPeopleArray));
+};
+console.log(newCarArrayA(data));
