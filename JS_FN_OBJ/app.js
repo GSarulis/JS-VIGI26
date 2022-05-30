@@ -453,6 +453,9 @@ const FiltredNamesK = (array) => {
 };
 console.log(FiltredNamesK(data));
 
+const hasK = (array) => array.filter((p) => p.first_name, includes("K")).length;
+console.log(hasK(data));
+
 const newCarArray = (array) => {
   const newCar = array.filter((person) => person.car_year >= 2000);
   return newCar.map((person) => person.id);
