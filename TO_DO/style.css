@@ -1,0 +1,17 @@
+body {
+  width: 400px;
+  height: 300px;
+}
+
+ul {
+  padding-right: 10;
+}
+ul li:hover {
+  cursor: pointer;
+  background-color: #a3c1ad;
+  color: white;
+  transition: 800ms;
+  border-radius: 10px;
+  text-align: center;
+  list-style-type: none;
+}
